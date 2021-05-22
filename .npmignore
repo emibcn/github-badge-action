@@ -1,12 +1,17 @@
-.git
-.github
+# Repo
+.git*
 Dockerfile
 docker-compose.yml
-*.tgz
+
+# Testing and building
 *.test.js
 .babelrc.js
 .editorconfig
 .eslintignore
 .eslintrc
 .prettierrc
+
+# Generated assets
+*.tgz
 .*.swp
+coverage/

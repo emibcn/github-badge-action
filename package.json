@@ -1,6 +1,6 @@
 {
   "name": "github-badge-action",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "description": "Create a badge using GitHub Actions inputs & outputs, and save it into a file",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
@@ -29,7 +29,7 @@
     "test:unit": "jest --color --coverage",
     "test:build": "run-s build",
     "test:lint": "eslint .",
-    "deploy": "np --contents dist/ --color --preview",
+    "deploy": "np --color --preview",
     "deploy-force": "np --contents dist/ --color"
   },
   "publishConfig": {
