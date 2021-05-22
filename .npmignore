@@ -1,5 +1,12 @@
+.git
 .github
 Dockerfile
 docker-compose.yml
 *.tgz
 *.test.js
+.babelrc.js
+.editorconfig
+.eslintignore
+.eslintrc
+.prettierrc
+.*.swp
