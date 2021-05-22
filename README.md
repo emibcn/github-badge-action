@@ -1,6 +1,6 @@
-![Test](https://github.com/emibcn/github-badge-action/workflows/.github/workflows/test.yml/badge.svg)
-![Coverage](https://raw.githubusercontent.com/emibcn/github-badge-action/badges/master/test-coverage.svg)
-![Test generated badge](https://raw.githubusercontent.com/emibcn/github-badge-action/badges/master/test-badge.svg)
+[![Test](https://github.com/emibcn/github-badge-action/actions/workflows/test.js.yml/badge.svg)](https://github.com/emibcn/github-badge-action/actions/workflows/test.js.yml)
+![Coverage](https://raw.githubusercontent.com/emibcn/github-badge-action/badges/main/test-coverage.svg)
+![Test generated badge](https://raw.githubusercontent.com/emibcn/github-badge-action/badges/main/test-badge.svg)
 
 # GitHub Badge action
 
