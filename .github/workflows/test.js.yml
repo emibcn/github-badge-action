@@ -30,6 +30,7 @@ jobs:
     outputs:
       coverage: ${{ steps.coverage.outputs.coverage }}
       coverage-rounded-display: ${{ steps.coverage.outputs.coverage-rounded-display }}
+      test-badge: ${{ steps.test-code.outputs.badge }}
 
     steps:
 
@@ -125,13 +126,16 @@ jobs:
       env:
         BRANCH: ${{ steps.extract_branch.outputs.branch }}
         FILE: 'test-coverage.svg'
+        TEST_BADGE: ${{ needs.test.outputs.test-badge }}
+        TEST_BADGE_FILE: test-badge.svg
       working-directory: ./badges
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         mkdir -p "${BRANCH}"
         mv "${FILE}" "${BRANCH}"
-        git add "${BRANCH}/${FILE}"
+        echo "${TEST_BADGE}" > "${BRANCH}/${TEST_BADGE_FILE}"
+        git add "${BRANCH}/${FILE}" "${BRANCH}/${TEST_BADGE_FILE}"
 
         # Will give error if badge did not changed
         git commit -m "Add/Update badge" || true
