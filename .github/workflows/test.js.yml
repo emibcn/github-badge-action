@@ -135,7 +135,7 @@ jobs:
         git config --local user.name "GitHub Action"
         mkdir -p "${BRANCH}"
         mv "${FILE}" "${BRANCH}"
-        echo "${TEST_BADGE}" > "${BRANCH}/${TEST_BADGE_FILE}"
+        echo -n "${TEST_BADGE}" > "${BRANCH}/${TEST_BADGE_FILE}"
         git add "${BRANCH}/${FILE}" "${BRANCH}/${TEST_BADGE_FILE}"
 
         # Will give error if badge did not changed
