@@ -1,9 +1,10 @@
-![.github/workflows/test.yml](https://github.com/emibcn/badge-action/workflows/.github/workflows/test.yml/badge.svg)
-![.github/workflows/test.yml](https://raw.githubusercontent.com/emibcn/badge-action/badges/master/test-badge.svg)
+![Test](https://github.com/emibcn/github-badge-action/workflows/.github/workflows/test.yml/badge.svg)
+![Coverage](https://raw.githubusercontent.com/emibcn/github-badge-action/badges/master/test-coverage.svg)
+![Test generated badge](https://raw.githubusercontent.com/emibcn/github-badge-action/badges/master/test-badge.svg)
 
 # GitHub Badge action
 
-This module generates a SVG badge using GitHub Actions inputs and outputs. The badge is generated using the NPM package [gradient-badge](https://github.com/bokub/gradient-badge) and echoed as a GitHub Action output, and saved into a file if a `path` is given.
+This module generates a SVG badge using GitHub Actions inputs and outputs. The badge is generated using the NPM package [gradient-badge](https://github.com/bokub/gradient-badge) and echoed as a GitHub Action output, and saved into a file if a `path` is given. This is the core of the GitHub Action [Badge action](https://github.com/marketplace/actions/badge-action).
 
 ## Install
 With `npm`:
