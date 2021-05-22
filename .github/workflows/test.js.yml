@@ -30,7 +30,7 @@ jobs:
     outputs:
       coverage: ${{ steps.coverage.outputs.coverage }}
       coverage-rounded-display: ${{ steps.coverage.outputs.coverage-rounded-display }}
-      test-badge: ${{ steps.test-code.outputs.badge }}
+      test-badge: ${{ steps.test.outputs.badge }}
 
     steps:
 
@@ -52,6 +52,7 @@ jobs:
           ${{ runner.OS }}-build
 
     - name: yarn install and test
+      id: test
       working-directory: ./
       run: |
         yarn install
