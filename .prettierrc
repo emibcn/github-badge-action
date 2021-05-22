@@ -1,0 +1,10 @@
+{
+  "singleQuote": true,
+  "semi": true,
+  "noSemi": false,
+  "tabWidth": 2,
+  "bracketSpacing": true,
+  "arrowParens": "always",
+  "trailingComma": "es5",
+  "parser": "babel"
+}
