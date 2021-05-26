@@ -9,6 +9,7 @@
   "author": "github.com/emibcn",
   "license": "GPL-3.0-or-later",
   "private": false,
+  "sideEffects": false,
   "keywords": [
     "github",
     "github action",
