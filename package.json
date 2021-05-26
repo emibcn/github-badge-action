@@ -31,7 +31,7 @@
     "test:build": "run-s build",
     "test:lint": "eslint .",
     "deploy": "np --color --preview",
-    "deploy-force": "np --contents dist/ --color"
+    "deploy-force": "np --contents --color"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org",
