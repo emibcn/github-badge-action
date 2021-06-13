@@ -1,5 +1,10 @@
 import { createBadgeFromInputs } from './index';
 
 it('Does not crash', () => {
-  createBadgeFromInputs();
+  createBadgeFromInputs({
+    inputFixes: {
+      gradient: () => 'green',
+      status: () => 'true',
+    },
+  });
 });
