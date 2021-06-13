@@ -1,4 +1,4 @@
-import createBadgeFromInputs from './index';
+import { createBadgeFromInputs } from './index';
 
 it('Does not crash', () => {
   createBadgeFromInputs();

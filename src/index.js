@@ -1,41 +1,40 @@
 import * as core from '@actions/core';
 import gradientBadge from 'gradient-badge';
 import fs from 'fs';
+import defaultInputMap from './defaultInputMap';
+import defaultInputFixes from './defaultInputFixes';
 
-const createBadgeFromInputs = () => {
+const createBadgeFromInputs = ({
+  inputMap = defaultInputMap,
+  inputFixes = defaultInputFixes,
+  outputName = 'badge',
+} = {}) => {
   try {
     // Get action inputs
-    const label = core.getInput('label');
-    const labelColor = core.getInput('label-color');
-    const status = `${core.getInput('status')}`; // Ensure string
-    const gradient = core
-      .getInput('color')
-      .split(',') // Color gradient as Array
-      .map((color) => color.trim(' ')); // Clean spaces
-    const style = core.getInput('style');
-    const icon = core.getInput('icon');
-    const iconWidth = core.getInput('icon-width');
-    const scale = core.getInput('scale');
-    const path = core.getInput('path');
+    const inputs = Object.entries(inputMap).reduce(
+      (acc, [key, input]) => ({
+        ...acc,
+        key: core.getInput(input),
+      }),
+      {}
+    );
 
-    const inputs = {
-      label,
-      labelColor,
-      status,
-      gradient,
-      style,
-      icon: icon?.length ? icon : null,
-      iconWidth,
-      scale,
-    };
+    // Fix some inputs
+    for (const [key, fn] of Object.entries(inputFixes)) {
+      inputs[key] = fn(inputs[key]);
+    }
 
-    console.log(' badge using the given inputs and defaults: ', inputs);
+    console.log('Generate badge using the given inputs and defaults: ', inputs);
 
     // Generate the badge
-    const svgString = gradientBadge(inputs);
+    const { path, ...gradientBadgeOptions } = inputs;
+    const svgString = gradientBadge(gradientBadgeOptions);
 
     // Output badge contents to Action output
-    core.setOutput('badge', svgString);
+    if (outputName?.length) {
+      console.log(`Write data to action's output 'badge'...`);
+      core.setOutput(outputName, svgString);
+    }
 
     // If path is defined, save SVG data to that file
     if (path && path.length) {
@@ -51,4 +50,4 @@ const createBadgeFromInputs = () => {
   }
 };
 
-export default createBadgeFromInputs;
+export { createBadgeFromInputs, defaultInputMap, defaultInputFixes };
