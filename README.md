@@ -137,7 +137,7 @@ The file path to store the badge image file. Only output to `badge` action outpu
 ## Outputs
 
 ### `badge`
-Once the badge is generated, the SVG contents are written to an action output (by default). Tha name of the output can be modified using `outputName` option:
+Once the badge is generated, the SVG contents are written to an action output (by default). The name of the output can be modified using `outputName` option:
 ```javascript
 createBadgeFromInputs({
   outputName: 'badge-svg-custom'
