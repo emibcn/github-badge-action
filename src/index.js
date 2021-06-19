@@ -37,7 +37,7 @@ const createBadgeFromInputs = ({
     }
 
     // If path is defined, save SVG data to that file
-    if (path && path.length) {
+    if (path?.length) {
       console.log(`Write data to file ${path}...`);
 
       // In case an error occurred writing file,
