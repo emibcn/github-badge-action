@@ -12,16 +12,16 @@ const createBadgeFromInputs = ({
   try {
     // Get action inputs
     const inputs = Object.entries(inputMap).reduce(
-      (acc, [key, input]) => ({
+      (acc, [key, inputName]) => ({
         ...acc,
-        key: core.getInput(input),
+        [key]: core.getInput(inputName),
       }),
       {}
     );
 
     // Fix some inputs
     for (const [key, fn] of Object.entries(inputFixes)) {
-      inputs[key] = fn(inputs[key]);
+      inputs[key] = fn(inputs);
     }
 
     console.log('Generate badge using the given inputs and defaults: ', inputs);

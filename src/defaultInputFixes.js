@@ -1,12 +1,12 @@
 const defaultInputFixes = {
   // Ensure string
-  status: (status) => `${status}`,
+  status: ({ status }) => `${status}`,
 
   // Ensure null if empty
-  icon: (icon) => (icon?.length ? icon : null),
+  icon: ({ icon }) => (icon?.length ? icon : null),
 
   // Color gradient as Array
-  gradient: (gradient) =>
+  gradient: ({ gradient }) =>
     gradient
       .split(',')
 
