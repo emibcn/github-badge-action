@@ -19,12 +19,14 @@ const createBadgeFromInputs = ({
       {}
     );
 
+    console.log('Received inputs:', inputs);
+
     // Fix some inputs
     for (const [key, fn] of Object.entries(inputFixes)) {
       inputs[key] = fn(inputs);
     }
 
-    console.log('Generate badge using the given inputs and defaults: ', inputs);
+    console.log('Generate badge using the given inputs and defaults:', inputs);
 
     // Generate the badge
     const { path, ...gradientBadgeOptions } = inputs;
@@ -46,6 +48,7 @@ const createBadgeFromInputs = ({
       console.log('Data saved succesfully.');
     }
   } catch (error) {
+    console.error(error);
     core.setFailed(error.message);
   }
 };

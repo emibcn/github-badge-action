@@ -53,7 +53,7 @@ const {
 
 createBadgeFromInputs({
   inputMap: {
-    ...defaultOptionsMap,
+    ...defaultInputMap,
     gradient: 'gradient',
   },
 });
@@ -95,31 +95,6 @@ createBadgeFromInputs({
   },
 });
 ```
-
-### Change `path` input
-The input `path` is the only one **not** passed to `gradientBadge`. Iy you want to change it's input name (and still use it), you'll need to ensure it's named `path`:
-
-```javascript
-const {
-  createBadgeFromInputs,
-  defaultInputMap,
-  defaultInputFixes
-} = require('github-badge-action');
-
-createBadgeFromInputs({
-  inputMap: {
-    ...defaultOptionsMap,
-    // Use `file` instead of `path` as the input name
-    path: 'file',
-  },
-  inputFixes: {
-    ...defaultInputFixes,
-    // Color gradient as Array, split with a pipe '|' instead of a comma ','
-    path: ({ file }) => file,
-  },
-});
-```
-
 
 ### Available options
 #### `label`
