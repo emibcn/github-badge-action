@@ -11,7 +11,7 @@ const defaultInputFixes = {
       .split(',')
 
       // Clean spaces
-      .map((color) => color.trim(' ')),
-};
+      .map((color) => color.trim(' '))
+}
 
-export default defaultInputFixes;
+export default defaultInputFixes

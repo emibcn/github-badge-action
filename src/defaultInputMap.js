@@ -7,7 +7,7 @@ const defaultInputMap = {
   icon: 'icon',
   iconWidth: 'icon-width',
   scale: 'scale',
-  path: 'path',
-};
+  path: 'path'
+}
 
-export default defaultInputMap;
+export default defaultInputMap

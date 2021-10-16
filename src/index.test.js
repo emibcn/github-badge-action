@@ -1,13 +1,13 @@
 import {
   createBadgeFromInputs,
   defaultInputMap,
-  defaultInputFixes,
-} from './index';
+  defaultInputFixes
+} from './index'
 
 it('Does not crash', () => {
   createBadgeFromInputs({
     inputMap: {
-      ...defaultInputMap,
+      ...defaultInputMap
     },
     inputFixes: {
       ...defaultInputFixes,
@@ -15,14 +15,14 @@ it('Does not crash', () => {
       // Use default fix using a test gradient
       gradient: () =>
         defaultInputFixes.gradient({
-          gradient: 'green,yellow',
+          gradient: 'green,yellow'
         }),
 
       // Use default fix with a non string value
       status: () =>
         defaultInputFixes.status({
-          status: true,
-        }),
-    },
-  });
-});
+          status: true
+        })
+    }
+  })
+})
