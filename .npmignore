@@ -9,6 +9,7 @@ docker-compose.yml
 .editorconfig
 .eslintignore
 .eslintrc
+.deepsource.toml
 .prettierrc
 
 # Generated assets
