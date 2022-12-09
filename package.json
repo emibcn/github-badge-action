@@ -1,6 +1,6 @@
 {
   "name": "github-badge-action",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Create a badge using GitHub Actions inputs & outputs, and save it into a file",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
